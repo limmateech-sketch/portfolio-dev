@@ -17,36 +17,37 @@
 
     body{
       font-family: Arial, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(56,189,248,0.10), transparent 28%),
-        radial-gradient(circle at top right, rgba(251,191,36,0.10), transparent 24%),
-        linear-gradient(180deg, #081120 0%, #0f172a 100%);
       color:#f8fafc;
+      background:
+        radial-gradient(circle at top left, rgba(56,189,248,0.10), transparent 25%),
+        radial-gradient(circle at top right, rgba(250,204,21,0.10), transparent 22%),
+        linear-gradient(180deg, #07101d 0%, #0f172a 100%);
       line-height:1.6;
     }
 
     a{
       text-decoration:none;
+      color:inherit;
     }
 
     .container{
-      width:min(1120px, calc(100% - 40px));
+      width:min(1140px, calc(100% - 32px));
       margin:0 auto;
     }
 
     header{
       position:sticky;
       top:0;
-      z-index:50;
-      backdrop-filter: blur(14px);
-      background:rgba(8,17,32,0.70);
+      z-index:100;
+      background:rgba(7,16,29,0.78);
+      backdrop-filter:blur(12px);
       border-bottom:1px solid rgba(148,163,184,0.15);
     }
 
     .nav-wrap{
       display:flex;
-      align-items:center;
       justify-content:space-between;
+      align-items:center;
       gap:20px;
       padding:18px 0;
     }
@@ -54,7 +55,7 @@
     .brand{
       display:flex;
       flex-direction:column;
-      gap:2px;
+      gap:4px;
     }
 
     .brand h2{
@@ -63,8 +64,9 @@
     }
 
     .brand span{
+      font-size:13px;
       color:#94a3b8;
-      font-size:14px;
+      letter-spacing:0.3px;
     }
 
     nav{
@@ -75,39 +77,39 @@
     }
 
     nav a{
-      color:#cbd5e1;
-      padding:10px 14px;
-      border:1px solid rgba(148,163,184,0.18);
+      padding:10px 15px;
       border-radius:999px;
-      font-size:14px;
+      border:1px solid rgba(148,163,184,0.16);
+      color:#cbd5e1;
       transition:0.25s ease;
+      font-size:14px;
     }
 
     nav a:hover{
-      color:#081120;
       background:#38bdf8;
+      color:#07101d;
       border-color:#38bdf8;
       transform:translateY(-1px);
     }
 
     .hero{
-      padding:90px 0 60px;
+      padding:90px 0 55px;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.2fr 0.8fr;
-      gap:24px;
+      grid-template-columns:1.3fr 0.7fr;
+      gap:22px;
       align-items:stretch;
     }
 
     .hero-card,
-    .highlight-card,
+    .side-card,
     .card{
-      background:rgba(30,41,59,0.82);
+      background:rgba(15,23,42,0.80);
       border:1px solid rgba(148,163,184,0.14);
-      border-radius:24px;
-      box-shadow:0 20px 60px rgba(0,0,0,0.28);
+      border-radius:28px;
+      box-shadow:0 24px 60px rgba(0,0,0,0.28);
     }
 
     .hero-card{
@@ -116,41 +118,41 @@
       overflow:hidden;
     }
 
-    .hero-card::after{
+    .hero-card::before{
       content:"";
       position:absolute;
+      inset:auto auto -90px -90px;
       width:220px;
       height:220px;
-      right:-70px;
-      top:-70px;
-      background:radial-gradient(circle, rgba(56,189,248,0.28), transparent 70%);
+      background:radial-gradient(circle, rgba(56,189,248,0.22), transparent 70%);
       pointer-events:none;
     }
 
     .hero-badge{
       display:inline-flex;
       align-items:center;
-      gap:10px;
+      gap:8px;
       padding:10px 16px;
       border-radius:999px;
       background:rgba(56,189,248,0.12);
-      border:1px solid rgba(56,189,248,0.25);
+      border:1px solid rgba(56,189,248,0.24);
       color:#7dd3fc;
       font-size:14px;
       margin-bottom:18px;
     }
 
     .hero-card h1{
-      font-size:52px;
+      font-size:54px;
       line-height:1.05;
-      margin-bottom:14px;
+      margin-bottom:16px;
       color:#ffffff;
+      max-width:760px;
     }
 
     .hero-card p{
       color:#cbd5e1;
       font-size:18px;
-      max-width:700px;
+      max-width:720px;
     }
 
     .hero-actions{
@@ -166,97 +168,105 @@
       align-items:center;
       justify-content:center;
       padding:14px 20px;
-      border-radius:14px;
+      border-radius:15px;
       font-weight:700;
       transition:0.25s ease;
     }
 
     .btn-primary{
       background:linear-gradient(135deg,#38bdf8,#0ea5e9);
-      color:#081120;
-      box-shadow:0 10px 24px rgba(14,165,233,0.28);
+      color:#07101d;
+      box-shadow:0 12px 24px rgba(14,165,233,0.28);
     }
 
     .btn-primary:hover{
       transform:translateY(-2px);
-      box-shadow:0 16px 34px rgba(14,165,233,0.32);
+      box-shadow:0 16px 30px rgba(14,165,233,0.34);
     }
 
     .btn-secondary{
+      border:1px solid rgba(148,163,184,0.16);
+      background:rgba(15,23,42,0.62);
       color:#e2e8f0;
-      border:1px solid rgba(148,163,184,0.2);
-      background:rgba(15,23,42,0.55);
     }
 
     .btn-secondary:hover{
-      transform:translateY(-2px);
       border-color:#38bdf8;
       color:#38bdf8;
+      transform:translateY(-2px);
     }
 
-    .highlight-card{
-      padding:28px;
+    .side-card{
+      padding:24px;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
       gap:18px;
     }
 
-    .highlight-top span{
+    .side-top span{
       color:#94a3b8;
-      font-size:14px;
-      text-transform:uppercase;
+      font-size:13px;
       letter-spacing:1px;
+      text-transform:uppercase;
     }
 
-    .highlight-top h3{
+    .side-top h3{
+      margin-top:10px;
       font-size:28px;
       color:#ffffff;
-      margin-top:10px;
+      line-height:1.2;
     }
 
-    .mini-stats{
+    .mini-list{
       display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
+      gap:12px;
     }
 
-    .mini-stat{
-      padding:16px 18px;
-      border-radius:18px;
-      background:rgba(15,23,42,0.65);
-      border:1px solid rgba(148,163,184,0.12);
+    .mini-item{
+      padding:16px;
+      border-radius:20px;
+      background:rgba(2,6,23,0.45);
+      border:1px solid rgba(148,163,184,0.10);
     }
 
-    .mini-stat strong{
+    .mini-item strong{
       display:block;
+      font-size:22px;
       color:#ffffff;
-      font-size:24px;
       margin-bottom:4px;
     }
 
-    .mini-stat span{
+    .mini-item span{
       color:#94a3b8;
       font-size:14px;
     }
 
     main{
-      padding-bottom:60px;
+      padding-bottom:70px;
     }
 
     section{
-      margin-top:26px;
+      margin-top:28px;
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:18px;
+      margin-bottom:18px;
+      flex-wrap:wrap;
     }
 
     .section-title{
       font-size:30px;
       color:#ffffff;
-      margin-bottom:18px;
     }
 
     .section-subtitle{
       color:#94a3b8;
-      margin-bottom:20px;
+      max-width:720px;
     }
 
     .card{
@@ -264,8 +274,34 @@
     }
 
     .about-text{
+      color:#dbe4ef;
       font-size:17px;
-      color:#cbd5e1;
+    }
+
+    .about-highlight{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:22px;
+    }
+
+    .about-box{
+      padding:18px;
+      border-radius:20px;
+      background:rgba(2,6,23,0.38);
+      border:1px solid rgba(148,163,184,0.10);
+    }
+
+    .about-box strong{
+      display:block;
+      color:#ffffff;
+      margin-bottom:6px;
+      font-size:16px;
+    }
+
+    .about-box span{
+      color:#94a3b8;
+      font-size:14px;
     }
 
     .skills-grid{
@@ -277,85 +313,122 @@
     .skill{
       background:linear-gradient(180deg, rgba(56,189,248,0.12), rgba(15,23,42,0.55));
       border:1px solid rgba(56,189,248,0.16);
-      color:#e2e8f0;
       border-radius:18px;
-      padding:16px;
-      font-weight:700;
+      padding:18px 14px;
       text-align:center;
       transition:0.25s ease;
     }
 
     .skill:hover{
       transform:translateY(-4px);
-      border-color:rgba(56,189,248,0.45);
+      border-color:rgba(56,189,248,0.42);
+      box-shadow:0 12px 25px rgba(0,0,0,0.18);
+    }
+
+    .skill-icon{
+      font-size:24px;
+      display:block;
+      margin-bottom:10px;
+    }
+
+    .skill-name{
+      color:#f8fafc;
+      font-weight:700;
+      font-size:15px;
     }
 
     .project-card{
       padding:30px;
     }
 
-    .project-header{
+    .project-top{
       display:flex;
       justify-content:space-between;
-      align-items:flex-start;
-      gap:16px;
-      margin-bottom:18px;
+      gap:18px;
       flex-wrap:wrap;
+      align-items:flex-start;
+      margin-bottom:16px;
     }
 
     .project-title{
-      font-size:28px;
+      font-size:30px;
       color:#ffffff;
-      margin-bottom:8px;
+      margin-bottom:10px;
     }
 
-    .project-tag{
-      display:inline-block;
+    .project-text{
+      color:#cbd5e1;
+      max-width:760px;
+    }
+
+    .project-badge{
       padding:10px 14px;
       border-radius:999px;
-      background:rgba(251,191,36,0.12);
-      border:1px solid rgba(251,191,36,0.20);
+      background:rgba(250,204,21,0.10);
+      border:1px solid rgba(250,204,21,0.18);
       color:#fde68a;
-      font-size:14px;
       font-weight:700;
+      font-size:14px;
+      white-space:nowrap;
     }
 
-    .project-description{
-      color:#cbd5e1;
-      margin-bottom:20px;
-      font-size:16px;
+    .project-points{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:22px;
+      margin-bottom:22px;
+    }
+
+    .point{
+      padding:16px;
+      border-radius:18px;
+      background:rgba(2,6,23,0.38);
+      border:1px solid rgba(148,163,184,0.10);
+    }
+
+    .point strong{
+      display:block;
+      color:#ffffff;
+      margin-bottom:6px;
+    }
+
+    .point span{
+      color:#94a3b8;
+      font-size:14px;
     }
 
     .project-gallery{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:18px;
-      margin-top:22px;
+      margin-top:12px;
     }
 
     .gallery-item{
-      background:rgba(15,23,42,0.65);
-      border:1px solid rgba(148,163,184,0.12);
-      border-radius:18px;
+      border-radius:20px;
       overflow:hidden;
+      background:rgba(2,6,23,0.40);
+      border:1px solid rgba(148,163,184,0.12);
       transition:0.25s ease;
     }
 
     .gallery-item:hover{
-      transform:translateY(-4px);
-      border-color:rgba(56,189,248,0.30);
+      transform:translateY(-5px);
+      border-color:rgba(56,189,248,0.35);
+      box-shadow:0 18px 34px rgba(0,0,0,0.24);
     }
 
     .gallery-item img{
       width:100%;
-      display:block;
-      aspect-ratio:16/10;
+      aspect-ratio:16 / 10;
       object-fit:cover;
+      display:block;
     }
 
     .gallery-caption{
       padding:14px 16px;
-      color:#cbd5e1;
+      color:#dbe4ef;
       font-size:14px;
     }
 
@@ -373,20 +446,20 @@
     }
 
     .resume-block{
+      background:rgba(2,6,23,0.38);
+      border:1px solid rgba(148,163,184,0.10);
+      border-radius:22px;
       padding:22px;
-      border-radius:20px;
-      background:rgba(15,23,42,0.62);
-      border:1px solid rgba(148,163,184,0.12);
     }
 
     .resume-block h3{
-      margin-bottom:14px;
       color:#ffffff;
+      margin-bottom:14px;
       font-size:20px;
     }
 
     .resume-block p{
-      color:#cbd5e1;
+      color:#dbe4ef;
       margin-bottom:8px;
     }
 
@@ -397,16 +470,29 @@
     }
 
     .contact-box{
-      padding:20px;
-      border-radius:18px;
-      background:rgba(15,23,42,0.62);
-      border:1px solid rgba(148,163,184,0.12);
+      padding:22px;
+      border-radius:20px;
+      background:rgba(2,6,23,0.38);
+      border:1px solid rgba(148,163,184,0.10);
+      transition:0.25s ease;
+    }
+
+    .contact-box:hover{
+      transform:translateY(-4px);
+      border-color:rgba(56,189,248,0.30);
+    }
+
+    .contact-icon{
+      font-size:22px;
+      margin-bottom:10px;
+      display:block;
     }
 
     .contact-box strong{
       display:block;
       color:#ffffff;
       margin-bottom:6px;
+      font-size:16px;
     }
 
     .contact-box span{
@@ -414,30 +500,28 @@
     }
 
     footer{
-      margin-top:34px;
-      padding:26px 0 40px;
-      color:#94a3b8;
-      text-align:center;
+      margin-top:38px;
+      padding:28px 0 10px;
       border-top:1px solid rgba(148,163,184,0.12);
+      text-align:center;
+      color:#94a3b8;
     }
 
-    @media (max-width: 900px){
+    @media (max-width: 960px){
       .hero-grid,
       .resume-grid,
-      .contact-grid{
+      .contact-grid,
+      .about-highlight,
+      .project-points{
         grid-template-columns:1fr;
       }
 
       .hero-card h1{
-        font-size:40px;
+        font-size:42px;
       }
     }
 
     @media (max-width: 640px){
-      .container{
-        width:min(100% - 24px, 1120px);
-      }
-
       .nav-wrap{
         flex-direction:column;
         align-items:flex-start;
@@ -454,7 +538,7 @@
       }
 
       .hero{
-        padding:70px 0 40px;
+        padding:70px 0 42px;
       }
 
       .hero-card{
@@ -468,6 +552,10 @@
       .section-title{
         font-size:26px;
       }
+
+      .container{
+        width:min(100% - 20px, 1140px);
+      }
     }
   </style>
 </head>
@@ -477,7 +565,7 @@
     <div class="container nav-wrap">
       <div class="brand">
         <h2>Ailton Lima Junior</h2>
-        <span>Portfólio profissional</span>
+        <span>Desenvolvedor Back-end Python</span>
       </div>
 
       <nav>
@@ -493,37 +581,37 @@
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-card">
-        <div class="hero-badge">Desenvolvedor Back-end Python</div>
-        <h1>Construindo soluções web com Python e Django</h1>
+        <div class="hero-badge">Portfólio profissional</div>
+        <h1>Soluções web com Python, Django e apresentação visual moderna</h1>
         <p>
-          Portfólio com foco em desenvolvimento de sistemas, organização visual,
-          experiência do usuário e apresentação profissional de projetos.
+          Portfólio criado para apresentar minha experiência, habilidades e projetos
+          com foco em desenvolvimento web, organização visual e sistemas funcionais.
         </p>
 
         <div class="hero-actions">
-          <a class="btn-primary" href="#projetos">Ver projetos</a>
+          <a class="btn-primary" href="#projetos">Explorar projeto</a>
           <a class="btn-secondary" href="#curriculo">Ver currículo</a>
         </div>
       </div>
 
-      <div class="highlight-card">
-        <div class="highlight-top">
-          <span>Destaque</span>
-          <h3>Sistema Livraria AFI</h3>
+      <div class="side-card">
+        <div class="side-top">
+          <span>Projeto destaque</span>
+          <h3>Livraria AFI</h3>
         </div>
 
-        <div class="mini-stats">
-          <div class="mini-stat">
+        <div class="mini-list">
+          <div class="mini-item">
             <strong>CRUD</strong>
-            <span>Cadastro, edição e exclusão</span>
+            <span>Cadastro, edição e exclusão de livros</span>
           </div>
-          <div class="mini-stat">
+          <div class="mini-item">
             <strong>Dashboard</strong>
-            <span>Resumo visual do sistema</span>
+            <span>Resumo visual com indicadores do sistema</span>
           </div>
-          <div class="mini-stat">
+          <div class="mini-item">
             <strong>Estoque</strong>
-            <span>Controle e atualização de itens</span>
+            <span>Atualização e gerenciamento de quantidades</span>
           </div>
         </div>
       </div>
@@ -533,57 +621,99 @@
   <main class="container">
 
     <section id="sobre">
-      <h2 class="section-title">Sobre mim</h2>
-      <p class="section-subtitle">Experiência técnica com visão de organização visual e usabilidade.</p>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Sobre mim</h2>
+          <p class="section-subtitle">Base técnica em informática, suporte e desenvolvimento com visão estética de design.</p>
+        </div>
+      </div>
 
       <div class="card">
         <div class="about-text">
-          Sou desenvolvedor focado em <strong>Python</strong> e <strong>Django</strong>, com experiência em
-          suporte técnico, manutenção de computadores, redes e desenvolvimento de sistemas web.
+          Sou desenvolvedor focado em <strong>Python</strong> e <strong>Django</strong>, com experiência em suporte técnico,
+          manutenção de computadores, redes e desenvolvimento de sistemas web.
           <br><br>
           Minha formação em <strong>Técnico em Informática</strong> e <strong>Design Gráfico</strong> me permite unir
-          conhecimento técnico com apresentação visual mais profissional, clara e atrativa.
+          conhecimento técnico com apresentação visual mais moderna, clara e profissional.
+        </div>
+
+        <div class="about-highlight">
+          <div class="about-box">
+            <strong>Desenvolvimento</strong>
+            <span>Construção de sistemas web organizados e funcionais</span>
+          </div>
+          <div class="about-box">
+            <strong>Suporte técnico</strong>
+            <span>Experiência com manutenção, help desk e redes</span>
+          </div>
+          <div class="about-box">
+            <strong>Visual profissional</strong>
+            <span>Projetos com atenção à usabilidade e estética</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="habilidades">
-      <h2 class="section-title">Habilidades</h2>
-      <p class="section-subtitle">Tecnologias e competências que fazem parte da minha base profissional.</p>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Habilidades</h2>
+          <p class="section-subtitle">Tecnologias e competências aplicadas nos meus projetos e na minha atuação profissional.</p>
+        </div>
+      </div>
 
       <div class="card">
         <div class="skills-grid">
-          <div class="skill">Python</div>
-          <div class="skill">Django</div>
-          <div class="skill">Git</div>
-          <div class="skill">GitHub</div>
-          <div class="skill">HTML</div>
-          <div class="skill">CSS</div>
-          <div class="skill">SQLite</div>
-          <div class="skill">VS Code</div>
-          <div class="skill">Suporte Técnico</div>
-          <div class="skill">Redes</div>
-          <div class="skill">Manutenção</div>
-          <div class="skill">Design Gráfico</div>
+          <div class="skill"><span class="skill-icon">🐍</span><span class="skill-name">Python</span></div>
+          <div class="skill"><span class="skill-icon">🌐</span><span class="skill-name">Django</span></div>
+          <div class="skill"><span class="skill-icon">🔧</span><span class="skill-name">Git</span></div>
+          <div class="skill"><span class="skill-icon">💻</span><span class="skill-name">GitHub</span></div>
+          <div class="skill"><span class="skill-icon">📄</span><span class="skill-name">HTML</span></div>
+          <div class="skill"><span class="skill-icon">🎨</span><span class="skill-name">CSS</span></div>
+          <div class="skill"><span class="skill-icon">🗄️</span><span class="skill-name">SQLite</span></div>
+          <div class="skill"><span class="skill-icon">⌨️</span><span class="skill-name">VS Code</span></div>
+          <div class="skill"><span class="skill-icon">🛠️</span><span class="skill-name">Suporte Técnico</span></div>
+          <div class="skill"><span class="skill-icon">🌍</span><span class="skill-name">Redes</span></div>
+          <div class="skill"><span class="skill-icon">🔩</span><span class="skill-name">Manutenção</span></div>
+          <div class="skill"><span class="skill-icon">✨</span><span class="skill-name">Design Gráfico</span></div>
         </div>
       </div>
     </section>
 
     <section id="projetos">
-      <h2 class="section-title">Projeto em destaque</h2>
-      <p class="section-subtitle">Fluxo completo de um sistema web desenvolvido com Python e Django.</p>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Projeto em destaque</h2>
+          <p class="section-subtitle">Apresentação completa do fluxo do sistema Livraria AFI.</p>
+        </div>
+      </div>
 
       <div class="card project-card">
-        <div class="project-header">
+        <div class="project-top">
           <div>
             <h3 class="project-title">Sistema Livraria AFI</h3>
-            <p class="project-description">
-              Sistema de gerenciamento de livros com autenticação, dashboard, catálogo,
-              cadastro, edição, exclusão e gestão de estoque.
+            <p class="project-text">
+              Sistema de gerenciamento de livros desenvolvido com Python e Django,
+              com autenticação, dashboard, CRUD completo e gestão de estoque.
             </p>
           </div>
 
-          <div class="project-tag">Projeto Django</div>
+          <div class="project-badge">Projeto Django</div>
+        </div>
+
+        <div class="project-points">
+          <div class="point">
+            <strong>Autenticação</strong>
+            <span>Tela de login com acesso ao sistema</span>
+          </div>
+          <div class="point">
+            <strong>Catálogo</strong>
+            <span>Gerenciamento de livros com listagem e ações</span>
+          </div>
+          <div class="point">
+            <strong>Estoque</strong>
+            <span>Controle quantitativo com atualização em tela</span>
+          </div>
         </div>
 
         <div class="project-gallery">
@@ -593,33 +723,33 @@
           </div>
 
           <div class="gallery-item">
-            <img src="dashboard.png" alt="Dashboard">
-            <div class="gallery-caption">Dashboard com indicadores principais</div>
+            <img src="dashboard.png" alt="Dashboard do sistema">
+            <div class="gallery-caption">Dashboard com visão geral do sistema</div>
           </div>
 
           <div class="gallery-item">
-            <img src="livros.png" alt="Lista de livros">
+            <img src="livros.png" alt="Tela de livros">
             <div class="gallery-caption">Gerenciamento e listagem de livros</div>
           </div>
 
           <div class="gallery-item">
-            <img src="cadastrar.png" alt="Cadastro">
+            <img src="cadastrar.png" alt="Tela de cadastro">
             <div class="gallery-caption">Cadastro de novos livros</div>
           </div>
 
           <div class="gallery-item">
-            <img src="editar.png" alt="Edição">
-            <div class="gallery-caption">Edição de informações do catálogo</div>
+            <img src="editar.png" alt="Tela de edição">
+            <div class="gallery-caption">Edição de registros do catálogo</div>
           </div>
 
           <div class="gallery-item">
-            <img src="excluir.png" alt="Exclusão">
+            <img src="excluir.png" alt="Tela de exclusão">
             <div class="gallery-caption">Confirmação de exclusão de item</div>
           </div>
 
           <div class="gallery-item">
-            <img src="estoque.png" alt="Estoque">
-            <div class="gallery-caption">Gestão e atualização de estoque</div>
+            <img src="estoque.png" alt="Tela de estoque">
+            <div class="gallery-caption">Gestão de estoque e atualização de quantidades</div>
           </div>
         </div>
 
@@ -631,16 +761,20 @@
     </section>
 
     <section id="curriculo">
-      <h2 class="section-title">Currículo</h2>
-      <p class="section-subtitle">Resumo das minhas formações, experiências e cursos.</p>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Currículo</h2>
+          <p class="section-subtitle">Resumo profissional com formação, experiência e cursos complementares.</p>
+        </div>
+      </div>
 
       <div class="card">
         <div class="resume-grid">
           <div class="resume-block">
             <h3>Objetivo profissional</h3>
             <p>
-              Colaborar em um ambiente onde eu possa aplicar meus conhecimentos,
-              contribuir com resultados e continuar evoluindo profissionalmente.
+              Colaborar em um ambiente de trabalho onde eu possa aplicar meus conhecimentos,
+              contribuir com resultados e crescer profissionalmente.
             </p>
           </div>
 
@@ -677,27 +811,35 @@
     </section>
 
     <section id="contato">
-      <h2 class="section-title">Contato</h2>
-      <p class="section-subtitle">Informações para networking, oportunidades e contato profissional.</p>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Contato</h2>
+          <p class="section-subtitle">Canal para oportunidades, networking e contato profissional.</p>
+        </div>
+      </div>
 
       <div class="card">
         <div class="contact-grid">
           <div class="contact-box">
+            <span class="contact-icon">📧</span>
             <strong>Email</strong>
             <span>limmajjunior@gmail.com</span>
           </div>
 
           <div class="contact-box">
+            <span class="contact-icon">📱</span>
             <strong>Telefone</strong>
             <span>(71) 98804-2041</span>
           </div>
 
           <div class="contact-box">
+            <span class="contact-icon">💼</span>
             <strong>GitHub</strong>
             <span>github.com/limmateech-sketch</span>
           </div>
 
           <div class="contact-box">
+            <span class="contact-icon">📍</span>
             <strong>Localização</strong>
             <span>Salvador - BA</span>
           </div>
