@@ -17,176 +17,456 @@
 
     body{
       font-family: Arial, sans-serif;
-      background:#0f172a;
+      background:
+        radial-gradient(circle at top left, rgba(56,189,248,0.10), transparent 28%),
+        radial-gradient(circle at top right, rgba(251,191,36,0.10), transparent 24%),
+        linear-gradient(180deg, #081120 0%, #0f172a 100%);
       color:#f8fafc;
       line-height:1.6;
     }
 
-    header{
-      background:linear-gradient(135deg,#020617,#1e293b);
-      padding:80px 20px;
-      text-align:center;
-      border-bottom:1px solid #334155;
-    }
-
-    header h1{
-      font-size:42px;
-      margin-bottom:10px;
-    }
-
-    header p{
-      font-size:18px;
-      color:#cbd5e1;
-      margin-bottom:8px;
-    }
-
-    nav{
-      margin-top:25px;
-    }
-
-    nav a{
-      display:inline-block;
-      margin:8px;
+    a{
       text-decoration:none;
-      background:#38bdf8;
-      color:#0f172a;
-      padding:12px 18px;
-      border-radius:10px;
-      font-weight:bold;
-      transition:0.2s ease;
-    }
-
-    nav a:hover{
-      opacity:0.9;
     }
 
     .container{
-      max-width:1100px;
+      width:min(1120px, calc(100% - 40px));
       margin:0 auto;
-      padding:40px 20px;
     }
 
-    .section-title{
-      font-size:28px;
-      margin-bottom:20px;
-      color:#38bdf8;
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(14px);
+      background:rgba(8,17,32,0.70);
+      border-bottom:1px solid rgba(148,163,184,0.15);
     }
 
-    .card{
-      background:#1e293b;
-      border:1px solid #334155;
-      border-radius:14px;
-      padding:24px;
-      margin-bottom:24px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.20);
-    }
-
-    .skills{
+    .nav-wrap{
       display:flex;
-      flex-wrap:wrap;
-      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:18px 0;
     }
 
-    .skill{
-      background:#38bdf8;
-      color:#0f172a;
-      padding:10px 14px;
-      border-radius:999px;
-      font-weight:bold;
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .brand h2{
+      font-size:20px;
+      color:#ffffff;
+    }
+
+    .brand span{
+      color:#94a3b8;
       font-size:14px;
     }
 
+    nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:flex-end;
+    }
+
+    nav a{
+      color:#cbd5e1;
+      padding:10px 14px;
+      border:1px solid rgba(148,163,184,0.18);
+      border-radius:999px;
+      font-size:14px;
+      transition:0.25s ease;
+    }
+
+    nav a:hover{
+      color:#081120;
+      background:#38bdf8;
+      border-color:#38bdf8;
+      transform:translateY(-1px);
+    }
+
+    .hero{
+      padding:90px 0 60px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:24px;
+      align-items:stretch;
+    }
+
+    .hero-card,
+    .highlight-card,
+    .card{
+      background:rgba(30,41,59,0.82);
+      border:1px solid rgba(148,163,184,0.14);
+      border-radius:24px;
+      box-shadow:0 20px 60px rgba(0,0,0,0.28);
+    }
+
+    .hero-card{
+      padding:42px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      right:-70px;
+      top:-70px;
+      background:radial-gradient(circle, rgba(56,189,248,0.28), transparent 70%);
+      pointer-events:none;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 16px;
+      border-radius:999px;
+      background:rgba(56,189,248,0.12);
+      border:1px solid rgba(56,189,248,0.25);
+      color:#7dd3fc;
+      font-size:14px;
+      margin-bottom:18px;
+    }
+
+    .hero-card h1{
+      font-size:52px;
+      line-height:1.05;
+      margin-bottom:14px;
+      color:#ffffff;
+    }
+
+    .hero-card p{
+      color:#cbd5e1;
+      font-size:18px;
+      max-width:700px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:28px;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 20px;
+      border-radius:14px;
+      font-weight:700;
+      transition:0.25s ease;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+      color:#081120;
+      box-shadow:0 10px 24px rgba(14,165,233,0.28);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 34px rgba(14,165,233,0.32);
+    }
+
+    .btn-secondary{
+      color:#e2e8f0;
+      border:1px solid rgba(148,163,184,0.2);
+      background:rgba(15,23,42,0.55);
+    }
+
+    .btn-secondary:hover{
+      transform:translateY(-2px);
+      border-color:#38bdf8;
+      color:#38bdf8;
+    }
+
+    .highlight-card{
+      padding:28px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .highlight-top span{
+      color:#94a3b8;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    .highlight-top h3{
+      font-size:28px;
+      color:#ffffff;
+      margin-top:10px;
+    }
+
+    .mini-stats{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+
+    .mini-stat{
+      padding:16px 18px;
+      border-radius:18px;
+      background:rgba(15,23,42,0.65);
+      border:1px solid rgba(148,163,184,0.12);
+    }
+
+    .mini-stat strong{
+      display:block;
+      color:#ffffff;
+      font-size:24px;
+      margin-bottom:4px;
+    }
+
+    .mini-stat span{
+      color:#94a3b8;
+      font-size:14px;
+    }
+
+    main{
+      padding-bottom:60px;
+    }
+
+    section{
+      margin-top:26px;
+    }
+
+    .section-title{
+      font-size:30px;
+      color:#ffffff;
+      margin-bottom:18px;
+    }
+
+    .section-subtitle{
+      color:#94a3b8;
+      margin-bottom:20px;
+    }
+
+    .card{
+      padding:28px;
+    }
+
+    .about-text{
+      font-size:17px;
+      color:#cbd5e1;
+    }
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+      gap:14px;
+    }
+
+    .skill{
+      background:linear-gradient(180deg, rgba(56,189,248,0.12), rgba(15,23,42,0.55));
+      border:1px solid rgba(56,189,248,0.16);
+      color:#e2e8f0;
+      border-radius:18px;
+      padding:16px;
+      font-weight:700;
+      text-align:center;
+      transition:0.25s ease;
+    }
+
+    .skill:hover{
+      transform:translateY(-4px);
+      border-color:rgba(56,189,248,0.45);
+    }
+
+    .project-card{
+      padding:30px;
+    }
+
+    .project-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:16px;
+      margin-bottom:18px;
+      flex-wrap:wrap;
+    }
+
     .project-title{
-      font-size:22px;
-      margin-bottom:12px;
+      font-size:28px;
+      color:#ffffff;
+      margin-bottom:8px;
+    }
+
+    .project-tag{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(251,191,36,0.12);
+      border:1px solid rgba(251,191,36,0.20);
+      color:#fde68a;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .project-description{
+      color:#cbd5e1;
+      margin-bottom:20px;
+      font-size:16px;
     }
 
     .project-gallery{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:18px;
-      margin-top:20px;
+      margin-top:22px;
     }
 
-    .project-gallery img{
+    .gallery-item{
+      background:rgba(15,23,42,0.65);
+      border:1px solid rgba(148,163,184,0.12);
+      border-radius:18px;
+      overflow:hidden;
+      transition:0.25s ease;
+    }
+
+    .gallery-item:hover{
+      transform:translateY(-4px);
+      border-color:rgba(56,189,248,0.30);
+    }
+
+    .gallery-item img{
       width:100%;
-      border-radius:12px;
-      border:1px solid #334155;
       display:block;
+      aspect-ratio:16/10;
+      object-fit:cover;
+    }
+
+    .gallery-caption{
+      padding:14px 16px;
+      color:#cbd5e1;
+      font-size:14px;
     }
 
     .project-links{
-      margin-top:20px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
     }
 
-    .project-links a,
-    .btn{
-      display:inline-block;
-      margin-right:12px;
-      margin-top:10px;
-      text-decoration:none;
-      background:#38bdf8;
-      color:#0f172a;
-      padding:12px 18px;
-      border-radius:10px;
-      font-weight:bold;
-      transition:0.2s ease;
+    .resume-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
     }
 
-    .project-links a:hover,
-    .btn:hover{
-      opacity:0.9;
+    .resume-block{
+      padding:22px;
+      border-radius:20px;
+      background:rgba(15,23,42,0.62);
+      border:1px solid rgba(148,163,184,0.12);
     }
 
-    .resume-item{
-      margin-bottom:22px;
-      padding-bottom:18px;
-      border-bottom:1px solid #334155;
+    .resume-block h3{
+      margin-bottom:14px;
+      color:#ffffff;
+      font-size:20px;
     }
 
-    .resume-item:last-child{
-      border-bottom:none;
-      margin-bottom:0;
-      padding-bottom:0;
-    }
-
-    .resume-item h3{
-      margin-bottom:8px;
-      color:#f8fafc;
-    }
-
-    .resume-item p{
+    .resume-block p{
       color:#cbd5e1;
+      margin-bottom:8px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .contact-box{
+      padding:20px;
+      border-radius:18px;
+      background:rgba(15,23,42,0.62);
+      border:1px solid rgba(148,163,184,0.12);
+    }
+
+    .contact-box strong{
+      display:block;
+      color:#ffffff;
       margin-bottom:6px;
     }
 
-    .contact p{
-      margin-bottom:10px;
+    .contact-box span{
+      color:#cbd5e1;
     }
 
     footer{
-      text-align:center;
-      padding:30px 20px;
-      border-top:1px solid #334155;
+      margin-top:34px;
+      padding:26px 0 40px;
       color:#94a3b8;
-      margin-top:30px;
+      text-align:center;
+      border-top:1px solid rgba(148,163,184,0.12);
     }
 
-    @media (max-width:700px){
-      header h1{
-        font-size:30px;
+    @media (max-width: 900px){
+      .hero-grid,
+      .resume-grid,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-card h1{
+        font-size:40px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .container{
+        width:min(100% - 24px, 1120px);
+      }
+
+      .nav-wrap{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      nav{
+        width:100%;
+      }
+
+      nav a,
+      .btn-primary,
+      .btn-secondary{
+        width:100%;
+      }
+
+      .hero{
+        padding:70px 0 40px;
+      }
+
+      .hero-card{
+        padding:28px;
+      }
+
+      .hero-card h1{
+        font-size:34px;
       }
 
       .section-title{
-        font-size:24px;
-      }
-
-      .project-links a,
-      .btn,
-      nav a{
-        width:100%;
-        text-align:center;
-        margin-right:0;
+        font-size:26px;
       }
     }
   </style>
@@ -194,139 +474,241 @@
 <body>
 
   <header>
-    <h1>Ailton Lima Junior</h1>
-    <p>Desenvolvedor Back-end Python | Técnico em Informática | Designer Gráfico</p>
-    <p>Salvador - BA</p>
+    <div class="container nav-wrap">
+      <div class="brand">
+        <h2>Ailton Lima Junior</h2>
+        <span>Portfólio profissional</span>
+      </div>
 
-    <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#curriculo">Currículo</a>
-      <a href="#contato">Contato</a>
-    </nav>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#curriculo">Currículo</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
   </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-card">
+        <div class="hero-badge">Desenvolvedor Back-end Python</div>
+        <h1>Construindo soluções web com Python e Django</h1>
+        <p>
+          Portfólio com foco em desenvolvimento de sistemas, organização visual,
+          experiência do usuário e apresentação profissional de projetos.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="#projetos">Ver projetos</a>
+          <a class="btn-secondary" href="#curriculo">Ver currículo</a>
+        </div>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-top">
+          <span>Destaque</span>
+          <h3>Sistema Livraria AFI</h3>
+        </div>
+
+        <div class="mini-stats">
+          <div class="mini-stat">
+            <strong>CRUD</strong>
+            <span>Cadastro, edição e exclusão</span>
+          </div>
+          <div class="mini-stat">
+            <strong>Dashboard</strong>
+            <span>Resumo visual do sistema</span>
+          </div>
+          <div class="mini-stat">
+            <strong>Estoque</strong>
+            <span>Controle e atualização de itens</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <main class="container">
 
     <section id="sobre">
       <h2 class="section-title">Sobre mim</h2>
+      <p class="section-subtitle">Experiência técnica com visão de organização visual e usabilidade.</p>
+
       <div class="card">
-        <p>
-          Sou desenvolvedor focado em <strong>Python</strong> e <strong>Django</strong>, com experiência em suporte técnico,
-          manutenção de computadores, redes e desenvolvimento de sistemas web.
-        </p>
-        <br>
-        <p>
+        <div class="about-text">
+          Sou desenvolvedor focado em <strong>Python</strong> e <strong>Django</strong>, com experiência em
+          suporte técnico, manutenção de computadores, redes e desenvolvimento de sistemas web.
+          <br><br>
           Minha formação em <strong>Técnico em Informática</strong> e <strong>Design Gráfico</strong> me permite unir
-          conhecimento técnico com organização visual, usabilidade e apresentação profissional de projetos.
-        </p>
+          conhecimento técnico com apresentação visual mais profissional, clara e atrativa.
+        </div>
       </div>
     </section>
 
     <section id="habilidades">
       <h2 class="section-title">Habilidades</h2>
+      <p class="section-subtitle">Tecnologias e competências que fazem parte da minha base profissional.</p>
+
       <div class="card">
-        <div class="skills">
-          <span class="skill">Python</span>
-          <span class="skill">Django</span>
-          <span class="skill">Git</span>
-          <span class="skill">GitHub</span>
-          <span class="skill">HTML</span>
-          <span class="skill">CSS</span>
-          <span class="skill">SQLite</span>
-          <span class="skill">VS Code</span>
-          <span class="skill">Suporte Técnico</span>
-          <span class="skill">Redes</span>
-          <span class="skill">Manutenção de Computadores</span>
-          <span class="skill">Design Gráfico</span>
+        <div class="skills-grid">
+          <div class="skill">Python</div>
+          <div class="skill">Django</div>
+          <div class="skill">Git</div>
+          <div class="skill">GitHub</div>
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">SQLite</div>
+          <div class="skill">VS Code</div>
+          <div class="skill">Suporte Técnico</div>
+          <div class="skill">Redes</div>
+          <div class="skill">Manutenção</div>
+          <div class="skill">Design Gráfico</div>
         </div>
       </div>
     </section>
 
     <section id="projetos">
       <h2 class="section-title">Projeto em destaque</h2>
-      <div class="card">
-        <h3 class="project-title">Sistema Livraria AFI</h3>
-        <p>
-          Sistema completo de gerenciamento de livros desenvolvido com <strong>Python</strong> e <strong>Django</strong>.
-        </p>
-        <br>
-        <p>
-          O sistema possui autenticação, dashboard com indicadores, cadastro de livros, edição, exclusão
-          e gestão de estoque, demonstrando conhecimentos em CRUD, organização de rotas, models, views e banco de dados.
-        </p>
+      <p class="section-subtitle">Fluxo completo de um sistema web desenvolvido com Python e Django.</p>
+
+      <div class="card project-card">
+        <div class="project-header">
+          <div>
+            <h3 class="project-title">Sistema Livraria AFI</h3>
+            <p class="project-description">
+              Sistema de gerenciamento de livros com autenticação, dashboard, catálogo,
+              cadastro, edição, exclusão e gestão de estoque.
+            </p>
+          </div>
+
+          <div class="project-tag">Projeto Django</div>
+        </div>
 
         <div class="project-gallery">
-          <img src="images/login.png" alt="Tela de login do sistema Livraria AFI">
-          <img src="dashboard.png" alt="Dashboard do sistema Livraria AFI">
-          <img src="livros.png" alt="Lista de livros do sistema Livraria AFI">
-          <img src="cadastrar.png" alt="Cadastro de livros do sistema Livraria AFI">
-          <img src="editar.png" alt="Edição de livros do sistema Livraria AFI">
-          <img src="excluir.png" alt="Exclusão de livros do sistema Livraria AFI">
-          <img src="estoque.png" alt="Gestão de estoque do sistema Livraria AFI">
+          <div class="gallery-item">
+            <img src="images/login.png" alt="Tela de login">
+            <div class="gallery-caption">Tela de login do sistema</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="dashboard.png" alt="Dashboard">
+            <div class="gallery-caption">Dashboard com indicadores principais</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="livros.png" alt="Lista de livros">
+            <div class="gallery-caption">Gerenciamento e listagem de livros</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="cadastrar.png" alt="Cadastro">
+            <div class="gallery-caption">Cadastro de novos livros</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="editar.png" alt="Edição">
+            <div class="gallery-caption">Edição de informações do catálogo</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="excluir.png" alt="Exclusão">
+            <div class="gallery-caption">Confirmação de exclusão de item</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="estoque.png" alt="Estoque">
+            <div class="gallery-caption">Gestão e atualização de estoque</div>
+          </div>
         </div>
 
         <div class="project-links">
-          <a href="https://github.com/limmateech-sketch/livraria-afi" target="_blank">Ver repositório</a>
-          <a href="https://limmateech-sketch.github.io/portfolio-dev/" target="_blank">Ver portfólio</a>
+          <a class="btn-primary" href="https://github.com/limmateech-sketch/livraria-afi" target="_blank">Ver repositório</a>
+          <a class="btn-secondary" href="#contato">Entrar em contato</a>
         </div>
       </div>
     </section>
 
     <section id="curriculo">
       <h2 class="section-title">Currículo</h2>
+      <p class="section-subtitle">Resumo das minhas formações, experiências e cursos.</p>
+
       <div class="card">
-        <div class="resume-item">
-         
-        </div>
+        <div class="resume-grid">
+          <div class="resume-block">
+            <h3>Objetivo profissional</h3>
+            <p>
+              Colaborar em um ambiente onde eu possa aplicar meus conhecimentos,
+              contribuir com resultados e continuar evoluindo profissionalmente.
+            </p>
+          </div>
 
-        <div class="resume-item">
-          <h3>Formação acadêmica</h3>
-          <p><strong>Técnico em Informática</strong> — Escola Técnica Navarro de Brito</p>
-          <p>Concluído em 25/06/2019</p>
-          <br>
-          <p><strong>Design Gráfico</strong> — Universidade Salvador (UNIFACS)</p>
-          <p>Curso superior de tecnologia — 05/06/2022</p>
-        </div>
+          <div class="resume-block">
+            <h3>Formação acadêmica</h3>
+            <p><strong>Técnico em Informática</strong> — Escola Técnica Navarro de Brito</p>
+            <p>Concluído em 25/06/2019</p>
+            <br>
+            <p><strong>Design Gráfico</strong> — Universidade Salvador (UNIFACS)</p>
+            <p>Curso superior de tecnologia — 05/06/2022</p>
+          </div>
 
-        <div class="resume-item">
-          <h3>Experiência profissional</h3>
-          <p><strong>FLEM – Fundação Luís Eduardo Magalhães</strong></p>
-          <p>Técnico em Informática | 08/01/2024 a 06/01/2026</p>
-          <p>Atuação com manutenção de microcomputadores, redes e suporte técnico (help desk).</p>
-          <br>
-          <p><strong>UCSal – Universidade Católica do Salvador</strong></p>
-          <p>Estagiário de Manutenção de Micro | 18/06/2018 a 20/06/2019</p>
-          <p>Montagem e manutenção de computadores, formatação e instalação de sistemas operacionais.</p>
-        </div>
+          <div class="resume-block">
+            <h3>Experiência profissional</h3>
+            <p><strong>FLEM – Fundação Luís Eduardo Magalhães</strong></p>
+            <p>Técnico em Informática | 08/01/2024 a 06/01/2026</p>
+            <p>Manutenção de microcomputadores, redes e suporte técnico.</p>
+            <br>
+            <p><strong>UCSal – Universidade Católica do Salvador</strong></p>
+            <p>Estagiário de Manutenção de Micro | 18/06/2018 a 20/06/2019</p>
+            <p>Montagem, manutenção, formatação e instalação de sistemas operacionais.</p>
+          </div>
 
-        <div class="resume-item">
-          <h3>Cursos complementares</h3>
-          <p>Back-end Python – CEPEDI Bolsa Futuro Digital</p>
-          <p>Inteligência Artificial – Fundação Bradesco</p>
-          <p>Introdução à Gestão de Projetos – Fundação Bradesco</p>
-          <p>SEI! Administrar – Escola Virtual do Governo</p>
-          <p>Negócios e Inovação – Fundação Bradesco</p>
+          <div class="resume-block">
+            <h3>Cursos complementares</h3>
+            <p>Back-end Python – CEPEDI Bolsa Futuro Digital</p>
+            <p>Inteligência Artificial – Fundação Bradesco</p>
+            <p>Introdução à Gestão de Projetos – Fundação Bradesco</p>
+            <p>SEI! Administrar – Escola Virtual do Governo</p>
+            <p>Negócios e Inovação – Fundação Bradesco</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="contato">
       <h2 class="section-title">Contato</h2>
-      <div class="card contact">
-        <p><strong>Email:</strong> limmajjunior@gmail.com</p>
-        <p><strong>Telefone:</strong> (71) 98804-2041</p>
-        <p><strong>GitHub:</strong> github.com/limmateech-sketch</p>
-        <p><strong>Cidade:</strong> Salvador - BA</p>
+      <p class="section-subtitle">Informações para networking, oportunidades e contato profissional.</p>
+
+      <div class="card">
+        <div class="contact-grid">
+          <div class="contact-box">
+            <strong>Email</strong>
+            <span>limmajjunior@gmail.com</span>
+          </div>
+
+          <div class="contact-box">
+            <strong>Telefone</strong>
+            <span>(71) 98804-2041</span>
+          </div>
+
+          <div class="contact-box">
+            <strong>GitHub</strong>
+            <span>github.com/limmateech-sketch</span>
+          </div>
+
+          <div class="contact-box">
+            <strong>Localização</strong>
+            <span>Salvador - BA</span>
+          </div>
+        </div>
       </div>
     </section>
 
+    <footer>
+      <p>© 2026 - Ailton Lima Junior. Todos os direitos reservados.</p>
+    </footer>
+
   </main>
-
-  <footer>
-    <p>© 2026 - Ailton Lima Junior. Todos os direitos reservados.</p>
-  </footer>
-
 </body>
 </html>
