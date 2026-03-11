@@ -5,127 +5,188 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ailton Lima Junior | Portfólio Dev</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    body {
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
       font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #f8fafc;
-      line-height: 1.6;
+      background:#0f172a;
+      color:#f8fafc;
+      line-height:1.6;
     }
 
-    header {
-      background: linear-gradient(135deg, #020617, #1e293b);
-      padding: 80px 20px;
-      text-align: center;
-      border-bottom: 1px solid #334155;
+    header{
+      background:linear-gradient(135deg,#020617,#1e293b);
+      padding:80px 20px;
+      text-align:center;
+      border-bottom:1px solid #334155;
     }
 
-    header h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+    header h1{
+      font-size:42px;
+      margin-bottom:10px;
     }
 
-    header p {
-      font-size: 18px;
-      color: #cbd5e1;
+    header p{
+      font-size:18px;
+      color:#cbd5e1;
+      margin-bottom:8px;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px;
+    nav{
+      margin-top:25px;
     }
 
-    .section-title {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #38bdf8;
+    nav a{
+      display:inline-block;
+      margin:8px;
+      text-decoration:none;
+      background:#38bdf8;
+      color:#0f172a;
+      padding:12px 18px;
+      border-radius:10px;
+      font-weight:bold;
+      transition:0.2s ease;
     }
 
-    .card {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 14px;
-      padding: 24px;
-      margin-bottom: 24px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
+    nav a:hover{
+      opacity:0.9;
     }
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:40px 20px;
     }
 
-    .skill {
-      background: #38bdf8;
-      color: #0f172a;
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-weight: bold;
-      font-size: 14px;
+    .section-title{
+      font-size:28px;
+      margin-bottom:20px;
+      color:#38bdf8;
     }
 
-    .project-title {
-      font-size: 22px;
-      margin-bottom: 12px;
-      color: #f8fafc;
+    .card{
+      background:#1e293b;
+      border:1px solid #334155;
+      border-radius:14px;
+      padding:24px;
+      margin-bottom:24px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.20);
     }
 
-    .project-links {
-      margin-top: 16px;
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .skill{
+      background:#38bdf8;
+      color:#0f172a;
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:bold;
+      font-size:14px;
+    }
+
+    .project-title{
+      font-size:22px;
+      margin-bottom:12px;
+    }
+
+    .project-gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:18px;
+      margin-top:20px;
+    }
+
+    .project-gallery img{
+      width:100%;
+      border-radius:12px;
+      border:1px solid #334155;
+      display:block;
+    }
+
+    .project-links{
+      margin-top:20px;
     }
 
     .project-links a,
-    .btn {
-      display: inline-block;
-      margin-right: 12px;
-      margin-top: 10px;
-      text-decoration: none;
-      background: #38bdf8;
-      color: #0f172a;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: 0.2s ease;
+    .btn{
+      display:inline-block;
+      margin-right:12px;
+      margin-top:10px;
+      text-decoration:none;
+      background:#38bdf8;
+      color:#0f172a;
+      padding:12px 18px;
+      border-radius:10px;
+      font-weight:bold;
+      transition:0.2s ease;
     }
 
     .project-links a:hover,
-    .btn:hover {
-      opacity: 0.9;
+    .btn:hover{
+      opacity:0.9;
     }
 
-    .contact p {
-      margin-bottom: 10px;
+    .resume-item{
+      margin-bottom:22px;
+      padding-bottom:18px;
+      border-bottom:1px solid #334155;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      border-top: 1px solid #334155;
-      color: #94a3b8;
-      margin-top: 30px;
+    .resume-item:last-child{
+      border-bottom:none;
+      margin-bottom:0;
+      padding-bottom:0;
     }
 
-    @media (max-width: 700px) {
-      header h1 {
-        font-size: 30px;
+    .resume-item h3{
+      margin-bottom:8px;
+      color:#f8fafc;
+    }
+
+    .resume-item p{
+      color:#cbd5e1;
+      margin-bottom:6px;
+    }
+
+    .contact p{
+      margin-bottom:10px;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px 20px;
+      border-top:1px solid #334155;
+      color:#94a3b8;
+      margin-top:30px;
+    }
+
+    @media (max-width:700px){
+      header h1{
+        font-size:30px;
       }
 
-      .section-title {
-        font-size: 24px;
+      .section-title{
+        font-size:24px;
       }
 
       .project-links a,
-      .btn {
-        width: 100%;
-        text-align: center;
-        margin-right: 0;
+      .btn,
+      nav a{
+        width:100%;
+        text-align:center;
+        margin-right:0;
       }
     }
   </style>
@@ -136,10 +197,19 @@
     <h1>Ailton Lima Junior</h1>
     <p>Desenvolvedor Back-end Python | Técnico em Informática | Designer Gráfico</p>
     <p>Salvador - BA</p>
+
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#curriculo">Currículo</a>
+      <a href="#contato">Contato</a>
+    </nav>
   </header>
 
   <main class="container">
-    <section>
+
+    <section id="sobre">
       <h2 class="section-title">Sobre mim</h2>
       <div class="card">
         <p>
@@ -154,8 +224,8 @@
       </div>
     </section>
 
-    <section>
-      <h2 class="section-title">Tecnologias</h2>
+    <section id="habilidades">
+      <h2 class="section-title">Habilidades</h2>
       <div class="card">
         <div class="skills">
           <span class="skill">Python</span>
@@ -166,45 +236,37 @@
           <span class="skill">CSS</span>
           <span class="skill">SQLite</span>
           <span class="skill">VS Code</span>
+          <span class="skill">Suporte Técnico</span>
+          <span class="skill">Redes</span>
+          <span class="skill">Manutenção de Computadores</span>
+          <span class="skill">Design Gráfico</span>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="projetos">
       <h2 class="section-title">Projeto em destaque</h2>
       <div class="card">
         <h3 class="project-title">Sistema Livraria AFI</h3>
         <p>
-          Sistema CRUD desenvolvido com <strong>Python</strong> e <strong>Django</strong> para gerenciamento de livros.
+          Sistema completo de gerenciamento de livros desenvolvido com <strong>Python</strong> e <strong>Django</strong>.
         </p>
         <br>
         <p>
-          O projeto permite cadastrar, listar, editar e excluir registros, demonstrando conhecimentos em
-          estruturação de aplicação web, rotas, models, views e integração com banco de dados.
+          O sistema possui autenticação, dashboard com indicadores, cadastro de livros, edição, exclusão
+          e gestão de estoque, demonstrando conhecimentos em CRUD, organização de rotas, models, views e banco de dados.
         </p>
-<h2 class="section-title">Projeto em destaque</h2>
 
-<div class="card">
+        <div class="project-gallery">
+          <img src="images/login.png" alt="Tela de login do sistema Livraria AFI">
+          <img src="dashboard.png" alt="Dashboard do sistema Livraria AFI">
+          <img src="livros.png" alt="Lista de livros do sistema Livraria AFI">
+          <img src="cadastrar.png" alt="Cadastro de livros do sistema Livraria AFI">
+          <img src="editar.png" alt="Edição de livros do sistema Livraria AFI">
+          <img src="excluir.png" alt="Exclusão de livros do sistema Livraria AFI">
+          <img src="estoque.png" alt="Gestão de estoque do sistema Livraria AFI">
+        </div>
 
-<h3>Sistema Livraria AFI</h3>
-
-<p>Sistema CRUD desenvolvido com Python e Django.</p>
-
-<img src="images/login.png" style="width:100%;border-radius:10px;margin-top:20px">
-
-<img src="dashboard.png" style="width:100%;border-radius:10px;margin-top:20px">
-
-<img src="livros.png" style="width:100%;border-radius:10px;margin-top:20px">
-
-<img src="cadastrar.png" style="width:100%;border-radius:10px;margin-top:20px">
-
-<img src="editar.png" style="width:100%;border-radius:10px;margin-top:20px">
-
-<img src="excluir.png" style="width:100%;border-radius:10px;margin-top:20px">
-
-<img src="estoque.png" style="width:100%;border-radius:10px;margin-top:20px">
-
-</div>
         <div class="project-links">
           <a href="https://github.com/limmateech-sketch/livraria-afi" target="_blank">Ver repositório</a>
           <a href="https://limmateech-sketch.github.io/portfolio-dev/" target="_blank">Ver portfólio</a>
@@ -212,14 +274,58 @@
       </div>
     </section>
 
-    <section>
+    <section id="curriculo">
+      <h2 class="section-title">Currículo</h2>
+      <div class="card">
+        <div class="resume-item">
+          <h3>Objetivo profissional</h3>
+          <p>
+            Colaborar em um ambiente de trabalho onde eu possa colocar em prática meus conhecimentos,
+            contribuindo com o crescimento da empresa e com meu desenvolvimento profissional.
+          </p>
+        </div>
+
+        <div class="resume-item">
+          <h3>Formação acadêmica</h3>
+          <p><strong>Técnico em Informática</strong> — Escola Técnica Navarro de Brito</p>
+          <p>Concluído em 25/06/2019</p>
+          <br>
+          <p><strong>Design Gráfico</strong> — Universidade Salvador (UNIFACS)</p>
+          <p>Curso superior de tecnologia — 05/06/2022</p>
+        </div>
+
+        <div class="resume-item">
+          <h3>Experiência profissional</h3>
+          <p><strong>FLEM – Fundação Luís Eduardo Magalhães</strong></p>
+          <p>Técnico em Informática | 08/01/2024 a 06/01/2026</p>
+          <p>Atuação com manutenção de microcomputadores, redes e suporte técnico (help desk).</p>
+          <br>
+          <p><strong>UCSal – Universidade Católica do Salvador</strong></p>
+          <p>Estagiário de Manutenção de Micro | 18/06/2018 a 20/06/2019</p>
+          <p>Montagem e manutenção de computadores, formatação e instalação de sistemas operacionais.</p>
+        </div>
+
+        <div class="resume-item">
+          <h3>Cursos complementares</h3>
+          <p>Back-end Python – CEPEDI Bolsa Futuro Digital</p>
+          <p>Inteligência Artificial – Fundação Bradesco</p>
+          <p>Introdução à Gestão de Projetos – Fundação Bradesco</p>
+          <p>SEI! Administrar – Escola Virtual do Governo</p>
+          <p>Negócios e Inovação – Fundação Bradesco</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
       <h2 class="section-title">Contato</h2>
       <div class="card contact">
         <p><strong>Email:</strong> limmajjunior@gmail.com</p>
+        <p><strong>Telefone:</strong> (71) 98804-2041</p>
         <p><strong>GitHub:</strong> github.com/limmateech-sketch</p>
         <p><strong>Cidade:</strong> Salvador - BA</p>
       </div>
     </section>
+
   </main>
 
   <footer>
